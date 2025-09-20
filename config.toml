@@ -8,31 +8,40 @@ format = """
 [ ](bg:blue)\
 $sudo\
 $username\
+$mise\
 [](fg:blue bg:red)\
 $directory\
 [](fg:red bg:green)\
 $git_branch\
 $git_status\
 [](fg:green)\
-\n$time\
+\n\
+$time\
+$cmd_duration\
 $c\
 $lua\
 $php\
+$zig\
 $rust\
 $nodejs\
 $golang\
+$python\
 $docker_context\
-$aws\
-\n$character"""
+\n\
+$character\
+"""
 
 
 [palettes.catppuccin_mocha]
 c = "#00599C"
 go = "#00ADD8"
 lua = "#2C2D72"
+zig = "#F7A41D"
+mise = "#4DA9BE"
 node = "#5FA04E"
 rust = "#000000"
 docker = "#2496ED"
+python = "#3776AB"
 rosewater = "#f5e0dc"
 flamingo = "#f2cdcd"
 pink = "#f5c2e7"
@@ -59,8 +68,10 @@ base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
 
-[package]
-disabled = true
+[cmd_duration]
+min_time = 500
+format = '[  $duration]($style)'
+style = "bg:surface0 fg:text"
 
 [character]
 format = "╰$symbol "
@@ -70,17 +81,6 @@ vimcmd_symbol = "[❮](bold blue)"
 vimcmd_visual_symbol = "[❮](bold yellow)"
 vimcmd_replace_symbol = "[❮](bold purple)"
 vimcmd_replace_one_symbol = "[❮](bold purple)"
-
-[sudo]
-style = "fg:crust bg:blue"
-symbol = "󱞾"
-format = "[$symbol]($style)"
-disabled = false
-
-[username]
-show_always = true
-style_user = "fg:crust bg:blue"
-format = "[ $user]($style)"
 
 [directory]
 style = "fg:crust bg:red"
@@ -98,12 +98,6 @@ truncation_symbol = "…/"
 "Pictures" = " Pictures"
 "Documents" = "󰈙 Documents"
 "Downloads" = " Downloads"
-
-[time]
-disabled = false
-time_format = "%R"                       # Hour:Minute Format
-style = "bg:#1d2230"
-format = '[[│ $time](fg:text)]($style)'
 
 [git_branch]
 symbol = ""
@@ -125,16 +119,48 @@ disabled = false
 typechanged = ""
 format = '[[($all_status$ahead_behind)](fg:crust bg:green)]($style)'
 
+[sudo]
+style = "fg:crust bg:blue"
+symbol = "󱞾"
+format = "[$symbol]($style)"
+disabled = false
+
+[username]
+show_always = true
+style_user = "fg:crust bg:blue"
+format = "[ $user]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#1d2230"
+format = '[[│ $time](fg:text)]($style)'
+
 [aws]
 symbol = "󰸏"
 style = "bold yellow"
 format = " [$symbol ($profile )(\\($region\\) )(\\[$duration\\] )]($style)"
+
+[mise]
+disabled = false
+format = '[ $health ](fg:#FFFFFF bg:blue)'
+symbol = "󱁤"
+healthy_symbol = ""
+unhealthy_symbol = ""
 
 [c]
 symbol = ""
 style = "149 bold"
 detect_extensions = ["c", "h", "cxx", "cpp", "hpp"]
 format = '[ [](fg:c)[$symbol ($version)](fg:#FFFFFF bg:c)]($style)[](fg:c)'
+
+[docker_context]
+symbol = ""
+format = '[ [](fg:docker)[$symbol $context](fg:#FFFFFF bg:docker)]($style)[](fg:docker)'
+
+[golang]
+symbol = ""
+format = '[ [](fg:go)[$symbol ($version)](fg:#FFFFFF bg:go)]($style)[](fg:go)'
 
 [lua]
 symbol = ""
@@ -144,19 +170,24 @@ format = '[ [](fg:lua)[$symbol ($version)](fg:#FFFFFF bg:lua)]($style)[](f
 symbol = ""
 format = '[ [](fg:node)[$symbol ($version)](fg:#FFFFFF bg:node)]($style)[](fg:node)'
 
-[rust]
-symbol = ""
-format = '[ [](fg:rust)[$symbol ($version)](fg:#FFFFFF bg:rust)]($style)[](fg:rust)'
-
-[golang]
-symbol = ""
-format = '[ [](fg:go)[$symbol ($version)](fg:#FFFFFF bg:go)]($style)[](fg:go)'
-
-[docker_context]
-symbol = ""
-format = '[ [](fg:docker)[$symbol $context](fg:#FFFFFF bg:docker)]($style)[](fg:docker)'
-
 [php]
 symbol = ""
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[python]
+symbol = ""
+format = '[ [](fg:python)[$symbol ($version)](fg:#FFFFFF bg:python)]($style)[](fg:python)'
+
+[ruby]
+symbol = ""
+format = "[$symbol ($version)]($style)"
+
+[rust]
+symbol = ""
+format = '[ [](fg:rust)[$symbol ($version)](fg:#FFFFFF bg:rust)]($style)[](fg:rust)'
+
+[zig]
+symbol = ""
+format = "[ [](fg:zig)[$symbol ($version)](fg:black bg:zig)]($style)[](fg:zig)"
+style = ""
