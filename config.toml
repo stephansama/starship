@@ -1,9 +1,6 @@
 '$schema' = "https://starship.rs/config-schema.json"
-
 add_newline = false
-
 palette = "catppuccin_mocha"
-
 format = """
 [ ](bg:blue)\
 $sudo\
@@ -30,7 +27,6 @@ $docker_context\
 \n\
 $character\
 """
-
 
 [palettes.catppuccin_mocha]
 c = "#00599C"
@@ -70,7 +66,7 @@ crust = "#11111b"
 
 [cmd_duration]
 min_time = 500
-format = '[  $duration]($style)'
+format = "[  $duration]($style)"
 style = "bg:surface0 fg:text"
 
 [character]
@@ -102,7 +98,7 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:green"
-format = '[[ $symbol $branch ](fg:crust bg:green)]($style)'
+format = "[[ $symbol $branch ](fg:crust bg:green)]($style)"
 
 [git_status]
 style = "bg:green"
@@ -117,7 +113,7 @@ untracked = "[](fg:#800080 bg:green)"
 diverged = ""
 disabled = false
 typechanged = ""
-format = '[[($all_status$ahead_behind)](fg:crust bg:green)]($style)'
+format = "[[($all_status$ahead_behind)](fg:crust bg:green)]($style)"
 
 [sudo]
 style = "fg:crust bg:blue"
@@ -134,7 +130,7 @@ format = "[ $user]($style)"
 disabled = false
 time_format = "%R"
 style = "bg:#1d2230"
-format = '[[│ $time](fg:text)]($style)'
+format = "[[│ $time](fg:text)]($style)"
 
 [aws]
 symbol = "󰸏"
@@ -143,7 +139,7 @@ format = " [$symbol ($profile )(\\($region\\) )(\\[$duration\\] )]($style)"
 
 [mise]
 disabled = false
-format = '[ $health ](fg:#FFFFFF bg:blue)'
+format = "[ $health ](fg:#FFFFFF bg:blue)"
 symbol = "󱁤"
 healthy_symbol = ""
 unhealthy_symbol = ""
@@ -152,32 +148,32 @@ unhealthy_symbol = ""
 symbol = ""
 style = "149 bold"
 detect_extensions = ["c", "h", "cxx", "cpp", "hpp"]
-format = '[ [](fg:c)[$symbol ($version)](fg:#FFFFFF bg:c)]($style)[](fg:c)'
+format = "[ [](fg:c)[$symbol ($version)](fg:#FFFFFF bg:c)]($style)[](fg:c)"
 
 [docker_context]
 symbol = ""
-format = '[ [](fg:docker)[$symbol $context](fg:#FFFFFF bg:docker)]($style)[](fg:docker)'
+format = "[ [](fg:docker)[$symbol $context](fg:#FFFFFF bg:docker)]($style)[](fg:docker)"
 
 [golang]
 symbol = ""
-format = '[ [](fg:go)[$symbol ($version)](fg:#FFFFFF bg:go)]($style)[](fg:go)'
+format = "[ [](fg:go)[$symbol ($version)](fg:#FFFFFF bg:go)]($style)[](fg:go)"
 
 [lua]
 symbol = ""
-format = '[ [](fg:lua)[$symbol ($version)](fg:#FFFFFF bg:lua)]($style)[](fg:lua)'
+format = "[ [](fg:lua)[$symbol ($version)](fg:#FFFFFF bg:lua)]($style)[](fg:lua)"
 
 [nodejs]
 symbol = ""
-format = '[ [](fg:node)[$symbol ($version)](fg:#FFFFFF bg:node)]($style)[](fg:node)'
+format = "[ [](fg:node)[$symbol ($version)](fg:#FFFFFF bg:node)]($style)[](fg:node)"
 
 [php]
 symbol = ""
 style = "bg:#212736"
-format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+format = "[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)"
 
 [python]
 symbol = ""
-format = '[ [](fg:python)[$symbol ($version)](fg:#FFFFFF bg:python)]($style)[](fg:python)'
+format = "[ [](fg:python)[$symbol ($version)](fg:#FFFFFF bg:python)]($style)[](fg:python)"
 
 [ruby]
 symbol = ""
@@ -185,7 +181,7 @@ format = "[$symbol ($version)]($style)"
 
 [rust]
 symbol = ""
-format = '[ [](fg:rust)[$symbol ($version)](fg:#FFFFFF bg:rust)]($style)[](fg:rust)'
+format = "[ [](fg:rust)[$symbol ($version)](fg:#FFFFFF bg:rust)]($style)[](fg:rust)"
 
 [zig]
 symbol = ""
